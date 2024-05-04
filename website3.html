@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="<link rel=" stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 2rem 9%;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 4rem;
+            color: #333333;
+            padding: 1rem;
+            margin: 2rem 0;
+            background: #000000;
+        }
+
+        .heading span{
+            color: #e21b5a;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            border-radius: 5rem;
+            background: #333333;
+            color: #f8f3f6;
+            padding: 9rem 3.5rem;
+            cursor: pointer;
+            font-size: 1.7rem;
+        }
+
+        .btn:hover {
+            background: #c74066;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #f8f3f6;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1rem #333333;
+        }
+
+        header .logo {
+            font-size: 3rem;
+            color: #c74066;
+            font-weight: bolder;
+        }
+
+        header .logo span {
+            color: #e21b5a;
+        }
+
+        header .navbar a {
+            font-size: 2rem;
+            padding: 0 1.5rem;
+            color: #000000;
+        }
+
+        header .navbar a:hover {
+            color: #e21b5a;
+        }
+
+        header .icons a {
+            font-size: 2.5rem;
+            color: #2a2829;
+            margin-left: 1.5rem;
+
+        }
+
+        header .icons a:hover {
+            color: #e21b5a;
+        }
+
+        header #toggler {
+            display: none;
+        }
+
+        header .fa-bars {
+            font-size: 3rem;
+            color: #353634;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            border: 1rem solid#000000;
+            display: none;
+        }
+
+        .home {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            background: url(../image/3.1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .home .content {
+            max-width: 50rem;
+        }
+
+        .home .content h3 {
+            font-size: 6rem;
+            color: #333333;
+        }
+
+        .home .content span {
+            font-size: 3.5rem;
+            color: #e21b5a;
+            padding: 1rem 0;
+            line-height: 1.5;
+        }
+
+        .home .content p {
+            font-size: 1.5rem;
+            color: #595b5a;
+            padding: 1rem 0;
+            line-height: 1.5;
+        }
+
+        .about .row{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            padding-bottom: 3rem;
+
+        }
+
+
+
+
+
+
+
+
+        /*media quries*/
+        @media (max-width:991px) {
+            html {
+                font-size: 55%;
+            }
+
+            header {
+                padding: 2rem;
+            }
+
+            section {
+                padding: 2rem;
+            }
+
+            .home {
+                background-position: left;
+            }
+        }
+
+        @media (max-width:768px) {
+            header .fa-bars {
+                display: block;
+            }
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #f8f1e9;
+                border-top: .1rem solid #000000;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+
+            header #toggler:checked .navbar {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+
+            header .navbar a {
+                margin: 1.5rem;
+                padding: 1.5rem;
+                background: #f8f1e9;
+                border: 1 rem solid #000000;
+                display: block;
+            }
+
+            .home .content h3 {
+                font-size: 5rem;
+            }
+
+            .home .content span {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width:450px) {
+            html {
+                font-size: 50%;
+            }
+            
+            .heading{
+                font-size: 3rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!--header section start-->
+    <header>
+
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">flower<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#product">product</a>
+            <a href="#review">review</a>
+            <a href="#contect">contect</a>
+        </nav>
+
+        <div class="icon">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+
+    </header>
+
+
+    <!--header section ends-->
+
+    <!--home section start-->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>Flesh flower</h3>
+            <span>Natural & Beutiful Flowers</span>
+            <p>Self-pollination happens in flowers where the stamen and carpel mature at the same time, and are
+                positioned so that the pollen can land on the flower's stigma. This pollination does not require an
+                investment from the plant to provide nectar and pollen as food for pollinators.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+    </section>
+    <!--home section ends-->
+
+    <!--about section starts-->
+
+    <section class="about" id="about">
+        <h1 class="heading"> <span> about </span> us </h1>
+
+        <div class="row">
+            <div class="video-container">
+                <video
+                    src="https://www.istockphoto.com/signature/video/plum-flower-blooming-against-blue-background-in-a-time-lapse-movie-prunus-growing-in-gm1142846357-306653152"
+                    loop autoplay muted></video>
+                <h3>Best Flower Sellers</h3>
+            </div>
+
+            <div class="content">
+                <h3>Why Choose Us?</h3>
+                <p>
+                    Flower is from the Middle English flour, which referred to both the ground grain and the
+                    reproductive structure in plants, before splitting off in the 17th century. It comes originally from
+                    the Latin name of the Italian goddess of flowers, Flora. The early word for flower in English was
+                    blossom,[4] though it now refers to flowers only of fruit trees.[5]
+                </p>
+                <p>
+                    The sepals, collectively called the calyx, are modified leaves that occur on the outermost whorl of
+                    the flower. They are leaf-like, in that they have a broad base, stomata, stipules, and
+                    chlorophyll.[9] Sepals are often waxy and tough, and grow quickly to protect the flower as it
+                    develops.[9][10] They may be deciduous, but will more commonly grow on to assist in fruit dispersal.
+                    If the calyx is fused together it is called gamosepalous.[9]
+                </p>
+                <a href="#" class="btn">Learn More</a>
+                
+            </div>
+        </div>
+    </section>
+    <!--about section ends-->
+</body>
+
+</html>
